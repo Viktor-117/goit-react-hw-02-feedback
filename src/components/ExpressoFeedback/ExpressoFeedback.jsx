@@ -9,23 +9,33 @@ class ExspressoFeedback extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
+    total: 0,
   };
 
   handleGoodIncrement = () => {
     this.setState(prevState => {
       return { good: prevState.good + 1 };
     });
+    this.countTotalFeedback();
   };
 
   handleNeutralIncrement = () => {
     this.setState(prevState => {
       return { neutral: prevState.neutral + 1 };
     });
+    this.countTotalFeedback();
   };
 
   handleBadIncrement = () => {
     this.setState(prevState => {
       return { bad: prevState.bad + 1 };
+    });
+    this.countTotalFeedback();
+  };
+
+  countTotalFeedback = () => {
+    this.setState(prevState => {
+      return { total: prevState.total + 1 };
     });
   };
 
@@ -43,6 +53,7 @@ class ExspressoFeedback extends Component {
           good={this.state.good}
           neutral={this.state.neutral}
           bad={this.state.bad}
+          total={this.state.total}
         ></Stats>
       </div>
     );
