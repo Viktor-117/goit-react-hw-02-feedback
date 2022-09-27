@@ -10,6 +10,7 @@ class ExspressoFeedback extends Component {
     neutral: 0,
     bad: 0,
     total: 0,
+    positivePercent: 0,
   };
 
   handleGoodIncrement = () => {
@@ -17,6 +18,7 @@ class ExspressoFeedback extends Component {
       return { good: prevState.good + 1 };
     });
     this.countTotalFeedback();
+    this.countPositiveFeedbackPercentage();
   };
 
   handleNeutralIncrement = () => {
@@ -24,6 +26,7 @@ class ExspressoFeedback extends Component {
       return { neutral: prevState.neutral + 1 };
     });
     this.countTotalFeedback();
+    this.countPositiveFeedbackPercentage();
   };
 
   handleBadIncrement = () => {
@@ -31,11 +34,20 @@ class ExspressoFeedback extends Component {
       return { bad: prevState.bad + 1 };
     });
     this.countTotalFeedback();
+    this.countPositiveFeedbackPercentage();
   };
 
   countTotalFeedback = () => {
     this.setState(prevState => {
       return { total: prevState.total + 1 };
+    });
+  };
+
+  countPositiveFeedbackPercentage = () => {
+    this.setState(prevState => {
+      return {
+        positivePercent: 100 * (prevState.good / prevState.total),
+      };
     });
   };
 
@@ -54,6 +66,7 @@ class ExspressoFeedback extends Component {
           neutral={this.state.neutral}
           bad={this.state.bad}
           total={this.state.total}
+          percent={this.state.positivePercent}
         ></Stats>
       </div>
     );

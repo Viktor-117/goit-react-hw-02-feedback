@@ -20,3 +20,9 @@ export const BtnBox = ({
     </div>
   );
 };
+
+BtnBox.propTypes = {
+  onGoodIncrement: PropTypes.func.isRequired,
+  onNeutralIncrement: PropTypes.func.isRequired,
+  onBadIncrement: PropTypes.func.isRequired,
+};
