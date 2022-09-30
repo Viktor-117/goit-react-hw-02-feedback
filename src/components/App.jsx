@@ -14,14 +14,13 @@ class App extends Component {
   };
 
   handleFeedback = option => {
-    this.setState(prevState => {
-      const buttonName = option.toLowerCase();
-      return (
+    const buttonName = option.toLowerCase();
+    this.setState(
+      prevState =>
         (buttonName === 'good' && { good: prevState.good + 1 }) ||
         (buttonName === 'neutral' && { neutral: prevState.neutral + 1 }) ||
         (buttonName === 'bad' && { bad: prevState.bad + 1 })
-      );
-    });
+    );
     this.countTotalFeedback();
     this.countPositiveFeedbackPercentage();
   };
