@@ -13,9 +13,9 @@ class App extends Component {
     positivePercent: 0,
   };
 
-  handleFeedback = event => {
+  handleFeedback = option => {
     this.setState(prevState => {
-      const buttonName = event.target.textContent.toLowerCase();
+      const buttonName = option.toLowerCase();
       return (
         (buttonName === 'good' && { good: prevState.good + 1 }) ||
         (buttonName === 'neutral' && { neutral: prevState.neutral + 1 }) ||

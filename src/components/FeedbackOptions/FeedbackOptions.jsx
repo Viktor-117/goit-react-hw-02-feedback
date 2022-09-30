@@ -11,10 +11,15 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
         listStyle: 'none',
       }}
     >
-      {options.map((option, idx) => {
+      {options.map(option => {
         return (
-          <ListItem key={idx}>
-            <Button type="button" onClick={onLeaveFeedback}>
+          <ListItem key={option}>
+            <Button
+              type="button"
+              onClick={() => {
+                onLeaveFeedback(option);
+              }}
+            >
               {option}
             </Button>
           </ListItem>
