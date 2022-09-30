@@ -4,17 +4,13 @@ import { Text } from './Statistics.styled';
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <div>
-      {good > 0 || neutral > 0 || bad > 0 ? (
-        <div>
-          <Text>Good: {good}</Text>
-          <Text>Neutral: {neutral}</Text>
-          <Text>Bad: {bad}</Text>
-          <Text>Total: {total}</Text>
-          <Text>Positive feedback: {Math.round(positivePercentage)}%</Text>
-        </div>
-      ) : (
-        <Text>There is no feedback</Text>
-      )}
+      <div>
+        <Text>Good: {good}</Text>
+        <Text>Neutral: {neutral}</Text>
+        <Text>Bad: {bad}</Text>
+        <Text>Total: {total}</Text>
+        <Text>Positive feedback: {Math.round(positivePercentage)}%</Text>
+      </div>
     </div>
   );
 };
