@@ -8,7 +8,9 @@ export const Button = styled.button`
   border: 1px solid #e6e6e6;
   border-radius: 4px;
   cursor: pointer;
+`;
 
+export const ListItem = styled.li`
   :not(:first-of-type) {
     margin-left: 8px;
   }
