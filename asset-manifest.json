@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Viktor-117/goit-react-hw-02-feedback.git/static/css/main.3c0c9886.css",
-    "main.js": "/Viktor-117/goit-react-hw-02-feedback.git/static/js/main.fa9cf6cd.js",
-    "index.html": "/Viktor-117/goit-react-hw-02-feedback.git/index.html",
-    "main.3c0c9886.css.map": "/Viktor-117/goit-react-hw-02-feedback.git/static/css/main.3c0c9886.css.map",
-    "main.fa9cf6cd.js.map": "/Viktor-117/goit-react-hw-02-feedback.git/static/js/main.fa9cf6cd.js.map"
+    "main.css": "/Viktor-117/goit-react-hw-02-feedback/static/css/main.3c0c9886.css",
+    "main.js": "/Viktor-117/goit-react-hw-02-feedback/static/js/main.4b72a8ed.js",
+    "index.html": "/Viktor-117/goit-react-hw-02-feedback/index.html",
+    "main.3c0c9886.css.map": "/Viktor-117/goit-react-hw-02-feedback/static/css/main.3c0c9886.css.map",
+    "main.4b72a8ed.js.map": "/Viktor-117/goit-react-hw-02-feedback/static/js/main.4b72a8ed.js.map"
   },
   "entrypoints": [
     "static/css/main.3c0c9886.css",
-    "static/js/main.fa9cf6cd.js"
+    "static/js/main.4b72a8ed.js"
   ]
 }
