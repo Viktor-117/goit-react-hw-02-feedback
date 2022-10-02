@@ -17,7 +17,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
             <Button
               type="button"
               onClick={() => {
-                onLeaveFeedback(option);
+                onLeaveFeedback(option.toLowerCase());
               }}
             >
               {option}
