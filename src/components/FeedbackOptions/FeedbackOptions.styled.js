@@ -15,3 +15,10 @@ export const ListItem = styled.li`
     margin-left: 8px;
   }
 `;
+
+export const List = styled.ul`
+  display: flex;
+  font-size: 12px;
+  margin-bottom: 20px;
+  list-style: none;
+`;

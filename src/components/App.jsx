@@ -3,51 +3,34 @@ import FeedbackOptions from 'components/FeedbackOptions';
 import Statistics from 'components/Statistics';
 import Section from 'components/Section';
 import Notification from 'components/Notification';
+import { Container } from './App.styled';
 
 class App extends Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
-    total: 0,
-    positivePercent: 0,
   };
 
   handleFeedback = option => {
     this.setState(prevState => {
       return { [option]: prevState[option] + 1 };
     });
-    this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
   };
 
   countTotalFeedback = () => {
-    this.setState(prevState => {
-      return { total: prevState.total + 1 };
-    });
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
   };
 
   countPositiveFeedbackPercentage = () => {
-    this.setState(prevState => {
-      return {
-        positivePercent: 100 * (prevState.good / prevState.total),
-      };
-    });
+    return (this.state.good / this.countTotalFeedback()) * 100;
   };
 
   render() {
-    const { good, neutral, bad, total, positivePercent } = this.state;
+    const { good, neutral, bad } = this.state;
     return (
-      <div
-        style={{
-          height: '100vh',
-          marginTop: 50,
-          display: 'flex',
-          justifyContent: 'center',
-          fontSize: 40,
-          color: '#010101',
-        }}
-      >
+      <Container>
         <div>
           <Section title={'Please leave feedback'}>
             <FeedbackOptions
@@ -61,15 +44,15 @@ class App extends Component {
                 good={good}
                 neutral={neutral}
                 bad={bad}
-                total={total}
-                positivePercentage={positivePercent}
+                total={this.countTotalFeedback()}
+                positivePercentage={this.countPositiveFeedbackPercentage()}
               ></Statistics>
             ) : (
               <Notification message="There is no feedback" />
             )}
           </Section>
         </div>
-      </div>
+      </Container>
     );
   }
 }
